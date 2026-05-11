@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import foto1 from '../assets/img/image-about-our-mission-small.webp';
-import bullet from '../assets/img/icon-bullet-point.svg';
-import pattern2 from '../assets/img/image-about-beyond-the-plate-small.webp';
-import fork from "../assets/img/pattern-fork.svg";
-import knife from "../assets/img/pattern-knife.svg";
+import foto1 from '../assets/images/image-about-our-mission-small.webp';
+import bullet from '../assets/images/icon-bullet-point.svg';
+import pattern2 from '../assets/images/image-about-beyond-the-plate-small.webp';
+import fork from "../assets/images/pattern-fork.svg";
+import knife from "../assets/images/pattern-knife.svg";
 
 function About() {
   return (

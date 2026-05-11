@@ -1,11 +1,11 @@
-import fotohome from "../assets/img/fotohome.png";
-import cooking from "../assets/img/image-home-real-life-small.webp";
-import lupa from "../assets/img/icon-search.svg";
-import raio from "../assets/img/icon-minimum-fuss.svg";
-import whole from "../assets/img/icon-whole-food-recipes.svg";
-import pattern1 from "../assets/img/pattern-squiggle-1.svg";
-import fork from "../assets/img/pattern-fork.svg";
-import knife from "../assets/img/pattern-knife.svg";
+import fotohome from "../assets/images/fotohome.png";
+import cooking from "../assets/images/image-home-real-life-small.webp";
+import lupa from "../assets/images/icon-search.svg";
+import raio from "../assets/images/icon-minimum-fuss.svg";
+import whole from "../assets/images/icon-whole-food-recipes.svg";
+import pattern1 from "../assets/images/pattern-squiggle-1.svg";
+import fork from "../assets/images/pattern-fork.svg";
+import knife from "../assets/images/pattern-knife.svg";
 
 function Home() {
   return (
