@@ -7,7 +7,7 @@ import iconCookTime from "../assets/icons/icon-cook-time.svg";
 import iconSearch from "../assets/icons/icon-search.svg";
 
 const API_URL = import.meta.env.VITE_API_URL;
-const SEARCH_DEBOUNCE_MS = 400;
+const SEARCH_DEBOUNCE_MS = 500;
 
 const PREP_TIME_OPTIONS = [
   { label: "Max Prep Time", value: "" },
@@ -41,9 +41,12 @@ export default function Recipes() {
   const [page, setPage] = useState(1);
   const [maxPrepTime, setMaxPrepTime] = useState("");
   const [maxCookTime, setMaxCookTime] = useState("");
+  console.log(API_URL);
   const [searchInput, setSearchInput] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const debounceRef = useRef(null);
+
+
 
   // Debounce: only update the actual search query after the user stops typing
   useEffect(() => {
@@ -164,9 +167,7 @@ export default function Recipes() {
                 <div className="aspect-square overflow-hidden rounded-xl mb-2">
                   <img
                     src={
-                      recipe.cover
-                        ? `${API_URL}/${recipe.cover}`
-                        : "https://placehold.co/600x600?text=No+Image"
+                      recipe.cover || "https://placehold.co/600x600?text=No+Image"
                     }
                     alt={recipe.title}
                     className="w-full h-full object-cover"

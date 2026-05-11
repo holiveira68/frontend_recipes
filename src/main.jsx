@@ -6,12 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 import "./index.css";
 
-import SiteLayout from "./layouts/MainLayout.jsx";
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import Recipes from "./pages/Recipes.jsx";
-import RecipeDetail from "./pages/RecipeDetail.jsx";
-import NotFound from "./pages/NotFound.jsx";
+import SiteLayout from "./layouts/MainLayout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Recipes from "./pages/Recipes";
+import RecipeDetail from "./pages/RecipeDetail";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -32,4 +32,3 @@ createRoot(document.getElementById("root")).render(
     </QueryClientProvider>
   </StrictMode>,
 );
-

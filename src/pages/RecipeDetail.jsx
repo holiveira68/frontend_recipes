@@ -9,9 +9,17 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 export default function RecipeDetail() {
   const { slug } = useParams();
-  const { data: recipe, isPending, isError, error } = useQuery({
+  console.log({ API_URL });
+
+  const {
+    data: recipe,
+    isPending,
+    isError,
+    error,
+  } = useQuery({
     queryKey: ["recipe", slug],
-    queryFn: () => fetch(`${API_URL}/api/v1/recipes/${slug}`).then((r) => r.json()),
+    queryFn: () =>
+      fetch(`${API_URL}/api/v1/recipes/${slug}`).then((r) => r.json()),
     retry: 0,
   });
 
@@ -63,9 +71,7 @@ export default function RecipeDetail() {
         <div className="rounded-3xl overflow-hidden aspect-4/3 shadow-lg shadow-teal-900/5">
           <img
             src={
-              recipe.cover
-                ? `${API_URL}/${recipe.cover}`
-                : "https://placehold.co/800x600?text=No+Image"
+              recipe.cover || "https://placehold.co/800x600?text=No+Image"
             }
             alt={recipe.title}
             className="w-full h-full object-cover"
