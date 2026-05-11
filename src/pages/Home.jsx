@@ -38,13 +38,13 @@ function Home() {
          <img
              src={pattern1} 
              alt="Onda" 
-             className="absolute w-full scale-199  opacity-25 object-cover bg-[url(../assets/images/pattern-squiggle-1.svg)]" 
+             className="absolute w-full scale-199  opacity-25 object-cover " 
            /> 
 
           <img
             src={fotohome}
             alt="Woman cooking"
-            className="w-full h-120 object-cover bg-[url(../assets/images/pattern-squiggle-1.svg)]"
+            className="w-full h-120 object-cover"
           />
         </div>
 
