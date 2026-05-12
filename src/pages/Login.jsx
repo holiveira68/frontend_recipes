@@ -1,22 +1,22 @@
 import { useState } from "react"
 
 export default function Login() {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
         <>
-            <form>
-                <div>
+            <form method="POST">
+                <div className="flex flex-col gap-1">
                     <label htmlFor="email">Email</label>
-                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input className="rounded" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
-                <div>
+                <div className="flex flex-col gap-1">
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input className="rounded" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button type="submit">Login</button>
+                <button className="bg-lime-800 text-white font-bold rounded px-4 py-1" type="submit">Login</button>
             </form>
         </>
-    )
+    );
 }
