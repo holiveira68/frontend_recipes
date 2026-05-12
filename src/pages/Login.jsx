@@ -7,7 +7,7 @@ export default function Login() {
     return (
         <>
             <form method="POST">
-                <div className="flex items-center justify-center flex-col gap-3">
+                <div className="flex items-center justify-center flex-col gap-3 mt-20 mb-20">
 
                     <div >
                         <label className="ml-4 mt-4 p-4" htmlFor="email">   Email : </label>
