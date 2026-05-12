@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Recipes from "./pages/Recipes";
 import RecipeDetail from "./pages/RecipeDetail";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")).render(
           <Route element={<SiteLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/recipes/:slug" element={<RecipeDetail />} />
           </Route>

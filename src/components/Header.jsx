@@ -21,7 +21,7 @@ function Header() {
                 </div>
 
                 <div className="inline ml-60 ">
-                    <a href="#" className="bg-lime-800 text-white inline font- font-bold rounded px-4 py-1 ">Browse recipes</a>
+                    <a href="/login" className="bg-lime-800 text-white inline font- font-bold rounded px-4 py-1 ">Login</a>
                 </div>
 
             </div>
