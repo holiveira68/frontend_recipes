@@ -11,11 +11,11 @@ export default function Login() {
 
                     <div >
                         <label className="ml-4 mt-4 p-4" htmlFor="email">   Email : </label>
-                        <input className="bg-gray-100 rounded border-green-900 border-2 h-9" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input className="bg-gray-100 rounded border-green-900 border-2 w-9" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div>
                         <label className="ml-4" htmlFor="password">Password :</label>
-                        <input className="bg-gray-100 rounded border-green-900 border-2 h-9" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input className="bg-gray-100 rounded border-green-900 border-2 w-9" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <button className="gap-3 mt-5 bg-lime-800 text-white font-bold rounded px-4 py-1" type="submit" >Login</button>
                 </div>
