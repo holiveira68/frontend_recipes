@@ -1,9 +1,26 @@
 import { useState } from "react"
+import { useNavigate } from "react-router";
 
 export default function Login() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
+    const [usernameError, setUsernameError] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordError, setPasswordError] = useState("");
 
+    const loginAction = () => {
+        setUsernameError("");
+        if (!email) {
+            setUsernameError("Email inválido!");
+        }
+        if (!password || password.length < 8) {
+            setPasswordError("Senha inválida!");
+        }
+
+        console.log(email);
+        navigate("/recipes");
+
+    }
     return (
         <>
             <form method="POST">
@@ -11,13 +28,13 @@ export default function Login() {
 
                     <div >
                         <label className="ml-4 mt-4 p-4" htmlFor="email">Email: </label>
-                        <input className="bg-gray-100 rounded border-green-900 border-2 w-96 ml-2" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input className="bg-gray-100 rounded border-green-900 border-2 w-96 ml-2" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => setUsernameError("")} />
                     </div>
                     <div>
                         <label className="ml-4 mt-4 p-4" htmlFor="password">Password: </label>
-                        <input className="bg-gray-100 rounded border-green-900 border-2 w-96 ml-1" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input className="bg-gray-100 rounded border-green-900 border-2 w-96 ml-1" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordError("")} />
                     </div>
-                    <button className="gap-3 mt-5 bg-lime-800 text-white font-bold rounded px-4 py-1" type="submit" >Login</button>
+                    <button className="gap-3 mt-5 bg-lime-800 text-white font-bold rounded px-4 py-1" type="button" onClick={() => loginAction()} >Login</button>
                 </div>
             </form>
         </>
