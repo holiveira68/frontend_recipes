@@ -9,11 +9,11 @@ export default function Login() {
             <form method="POST">
                 <div className="flex items-center justify-center flex-col gap-1">
                     <label htmlFor="email">Email</label>
-                    <input className="rounded" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input className="rounded border-emerald-200" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className="flex items-center justify-center flex-col gap-1">
                     <label htmlFor="password">Password</label>
-                    <input className="rounded" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input className="rounded border-emerald-200" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <button className="items-center justify-center bg-lime-800 text-white font-bold rounded px-4 py-1" type="submit">Login</button>
             </form>
