@@ -26,13 +26,13 @@ export default function Login() {
             <form method="POST">
                 <div className="flex items-center justify-center flex-col gap-3 mt-20 mb-20">
 
-                    <div >
-                        <label className="ml-4 mt-4 p-4" htmlFor="email">Email: </label>
-                        <input className="bg-gray-100 rounded border-green-900 border-2 w-96 ml-2" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => setUsernameError("")} />
+                    <div className="flex flex-col w-96">
+                        <label className="mb-1 font-medium" htmlFor="email">Email: </label>
+                        <input className="bg-gray-100 rounded border-green-900 border-2 w-full p-2" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => setUsernameError("")} />
                     </div>
-                    <div>
-                        <label className="ml-4 mt-4 p-4" htmlFor="password">Password: </label>
-                        <input className="bg-gray-100 rounded border-green-900 border-2 w-96 ml-1" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordError("")} />
+                    <div className="flex flex-col w-96">
+                        <label className="mb-1 font-medium" htmlFor="password">Password: </label>
+                        <input className="bg-gray-100 rounded border-green-900 border-2 w-full p-2" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordError("")} />
                     </div>
                     <button className="gap-3 mt-5 bg-lime-800 text-white font-bold rounded px-4 py-1" type="button" onClick={() => loginAction()} >Login</button>
                 </div>
