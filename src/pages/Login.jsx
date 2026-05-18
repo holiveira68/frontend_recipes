@@ -8,18 +8,44 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
 
-    const loginAction = () => {
+    const loginAction = async () => {
         setUsernameError("");
+        setPasswordError("");
+
         if (!email) {
             setUsernameError("Email inválido!");
+            return; // Impede que o código continue se o email for inválido
         }
         if (!password || password.length < 8) {
             setPasswordError("Senha inválida!");
+            return; // Impede que o código continue se a senha for inválida
         }
 
-        console.log(email);
-        navigate("/recipes");
+        const payload = {
+            email: email,
+            password: password
+        }
+        const endpoint = '/api/v1/users/login' // Alterei de 'vi' para 'v1', verifique se é isso mesmo
+        
+        try {
+            // Nota: Se apiFetch for uma função que faz a requisição, você provavelmente precisa de 'await' aqui.
+            // Exemplo caso fosse usar o fetch nativo:
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
 
+            if (response.ok) {
+                console.log(email);
+                navigate("/recipes"); // Só navega se a requisição de login tiver sucesso
+            } else {
+                setPasswordError("Email ou senha incorretos!");
+            }
+        } catch (error) {
+            console.error(error);
+            setPasswordError("Erro ao tentar fazer login.");
+        }
     }
     return (
         <>
